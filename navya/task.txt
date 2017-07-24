@@ -1,0 +1,78 @@
+Description : Implement REST APIs using a framework of your choice or a custom framework. We prefer Python Django or Flask but feel free to pick any language you are more comfortable with. 
+Write basic unit test cases for your code and come up with coverage %
+
+There are 3 models in the system
+=================================
+1. User
+2. Roles 
+3. Permissions
+
+User can have 1 or more roles.
+
+Roles can have one or more Permissions.
+
+Implement REST endpoints for following operation
+============================================
+
+1. Given user, return list of names of permissions that this user is entitled to.     url: http://<server>/user/<userid> (GET method)
+2. Given user and permission, return boolean if entitled or not. url : http://<server>/checkpermission/?userid=<user_id>&permissionid=<permission_id> (GET Method)
+3. Modify permissions of a role ex: http://<server>/roles/<roleid> POST_PARAM:{"permissions":["perm5"]} (POST Method)
+4. Delete a permission ex: http://<server>/permissions/<permission_id> (DELETE Method).
+
+General coding rules
+===============
+Use appropriate http response code. 
+Minimum/NO redundant code.
+Do not use framework built in ORM. Handle json by custom code.
+
+
+Sample set of data(Copy this into a separate file and use in program.):
+load following json data from file into memory: No need to use an external data store. 
+
+Users
+=====
+{
+"id":"user1",
+"roles":["role1","role3"]
+}
+
+Roles
+=====
+{
+"id":"role1",
+"permissions":["perm1","perm5"]
+}
+
+{
+"id":"role3",
+"permissions":["perm6","perm7"]
+}
+
+Permissions
+=========
+{
+"id":"perm1"
+"name":"Can check balance"
+}
+
+{
+"id":"perm5"
+"name":"Can deposit"
+}
+
+{
+"id":"perm6"
+"name":"Can Transfer"
+}
+
+{
+"id":"perm7"
+"name":"Can withdraw"
+}
+
+Evaluation Criteria : Structured and clean code, object oriented approach, scalability, database table structures (if applicable), REST knowledge
+
+Expected time : 2 - 3 hrs max (unit testing is going to take time) 
+Please send us the actual time you took to complete the solution.
+
+
